@@ -1,0 +1,5 @@
+xlrd
+einops
+numpy==1.21.2
+torch==1.7.0+cu110
+torchvision==0.8.1+cu110

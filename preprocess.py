@@ -1,6 +1,4 @@
-'''
-连轮廓两边的点 连正方形的中心横线 保证脸（眼）一样宽，下巴额头发型都不管了 直方图均衡
-'''
+
 import cv2
 import  numpy as np
 import os
@@ -9,8 +7,8 @@ from PIL import Image
 predictor_path = ".\weight\dlibdat\shape_predictor_68_face_landmarks.dat"
 
 
-file_path = ".\dataset\\mj"    # 输入文件夹
-save_path1=".\dataset\\new1"    # 输入文件夹
+file_path = ".\dataset\\ab"     # put facial photos here
+save_path1=".\dataset\\new"    # output images
 if not os.path.exists(save_path1):
     os.makedirs(save_path1)
 

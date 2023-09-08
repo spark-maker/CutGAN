@@ -19,10 +19,10 @@ from model.resnet import *
 parser = argparse.ArgumentParser()
 parser.add_argument("--batch_size", default=1, type=int)
 parser.add_argument("--img_size", default=256, type=int)
-parser.add_argument('--img_save_path', type=str,default='./snapshot/ci/7/')
+parser.add_argument('--img_save_path', type=str,default='./snapshot/test/new1/')
 parser.add_argument('--weight_save_path', type=str,default='./weight/transfer/G-ci.pth')
 parser.add_argument("--data_root", default='./dataset/')
-parser.add_argument("--folder", default=["realA"])
+parser.add_argument("--folder", default=["new1"])
 parser.add_argument("--label", default={"gender":2,"glass":2,"quality":2}) #0：male/ glass; 1:female / no glass; 2:all data
 parser.add_argument("--num_workers", default=16, type=int)
 parser.add_argument("--log_path", default='./log/Pix2Pix.log')

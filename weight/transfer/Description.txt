@@ -1,0 +1,2 @@
+Generator weight of GAN model：
+G-ci.pth
