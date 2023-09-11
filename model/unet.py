@@ -12,7 +12,7 @@ class DoubleConv(nn.Module):
         super().__init__()
         if not mid_channels:
             mid_channels = out_channels
-        self.double_conv_down = nn.Sequential(
+        self.double_conv = nn.Sequential(  #if use G-ci.pth change  “self.double_conv_down” to  ”self.double_conv“
             nn.Conv2d(in_channels, mid_channels, kernel_size=3, padding=1),
             nn.InstanceNorm2d(mid_channels),
             nn.ReLU(inplace=True),
@@ -22,7 +22,7 @@ class DoubleConv(nn.Module):
         )
 
     def forward(self, x):
-        return self.double_conv_down(x)
+        return self.double_conv(x) #if use G-ci.pth change  “self.double_conv_down” to  ”self.double_conv“
 
 
 class Down(nn.Module):

@@ -19,10 +19,10 @@ from model.resnet import *
 parser = argparse.ArgumentParser()
 parser.add_argument("--batch_size", default=1, type=int)
 parser.add_argument("--img_size", default=256, type=int)
-parser.add_argument('--img_save_path', type=str,default='./snapshot/test/new1/')
+parser.add_argument('--img_save_path', type=str,default='./snapshot/test/new/')
 parser.add_argument('--weight_save_path', type=str,default='./weight/transfer/G-ci.pth')
 parser.add_argument("--data_root", default='./dataset/')
-parser.add_argument("--folder", default=["new1"])
+parser.add_argument("--folder", default=["new"])
 parser.add_argument("--label", default={"gender":2,"glass":2,"quality":2}) #0：male/ glass; 1:female / no glass; 2:all data
 parser.add_argument("--num_workers", default=16, type=int)
 parser.add_argument("--log_path", default='./log/Pix2Pix.log')
@@ -39,7 +39,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 G = UNet_transfer(n_channels=3, n_classes=3).to(device)
 G.load_state_dict(torch.load(opt.weight_save_path, map_location=torch.device(device)))
 C = ResNet(Bottleneck, [3,4,23,3], num_classes=4, num_channels=3,tune=True).to(device)
-C.load_state_dict(torch.load('./weight/class4/100D.pth', map_location=torch.device(device)),strict=False)
+C.load_state_dict(torch.load('./weight/class4/90D.pth', map_location=torch.device(device)),strict=False)
 
 
 for i, (img) in enumerate(data_loader):
