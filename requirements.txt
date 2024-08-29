@@ -1,7 +1,7 @@
 xlrd
 einops
-numpy   ~->1.22        ==1.21.2 
-torch   ~->1.13.1      ==1.7.0+cu110  
+numpy   ~->1.22        1.21.2 
+torch   ~->1.13.1      1.7.0+cu110  
 torchvision==0.8.1+cu110
 
 
